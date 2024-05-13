@@ -15,10 +15,10 @@ export default function Summary({ score, noq }) {
     }
   });
   const { loding, error, result } = useFetchApi(
-    `https://api.pexels.com/v1/search?query=${getKeyword()}&per_page=1`,
+    `https://api.pexels.com/v1/search?query=${getKeyword}&per_page=1`,
     "GET",
     {
-      Authorization: "PXuYJF3p3TGvd2dI2MUDcwcqj1qfmm2GzgaQcLwpU2IGPL0mMcKG35p3",
+      Authorization: import.meta.env.VITE_REACT_APP_PEXELES_API,
     }
   );
   const image = result ? result?.photos[0].src.medium : successLogo;
